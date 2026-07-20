@@ -1,0 +1,307 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto 30px;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input[type="text"],
+input[type="number"]{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+}
+
+
+.table-responsive{
+    width:100%;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:700px;
+    border-collapse:collapse;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+input[type=text],
+input[type=number]{
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.radio-group{
+margin-top:10px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:#007bff;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+border-radius:5px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.view-btn{
+display:block;
+text-align:center;
+margin-top:20px;
+background:green;
+color:white;
+padding:12px;
+text-decoration:none;
+border-radius:5px;
+}
+
+.view-btn:hover{
+background:darkgreen;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table th,
+table td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+table th{
+background:#007bff;
+color:white;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+    width:100%;
+    background:#007bff;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+    padding:8px 15px;
+    border-radius:5px;
+}
+
+.nav-links li a:hover{
+    background:white;
+    color:#007bff;
+}
+
+/* Hamburger */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.navbar{
+    padding:15px 20px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#007bff;
+    flex-direction:column;
+    display:none;
+    text-align:center;
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.nav-links li{
+    margin:15px 0;
+}
+
+}
+
+
+/* Filter Buttons */
+
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.filter-buttons button{
+    padding:10px 20px;
+    border:none;
+    background:#007bff;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.filter-buttons button:hover{
+    background:#0056b3;
+}
+
+
+
+@media (max-width:768px){
+
+    .container{
+        width:95%;
+        padding:20px 15px;
+        margin-top:90px;
+    }
+
+    h2{
+        font-size:22px;
+        text-align:center;
+    }
+
+    label{
+        font-size:15px;
+    }
+
+    input[type="text"],
+    input[type="number"]{
+        font-size:15px;
+        padding:10px;
+    }
+
+    .radio-group{
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+        margin-top:10px;
+    }
+
+    button{
+        width:100%;
+        font-size:16px;
+    }
+
+    .filter-buttons{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .filter-buttons button{
+        width:100%;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    th,
+    td{
+        padding:8px;
+        white-space:nowrap;
+    }
+
+}
