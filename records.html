@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Vehicle Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <div class="logo">🚗 Vehicle Management</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="records.html">View Records</a></li>
+    </ul>
+</nav>
+
+
+
+<div class="container">
+
+<h2>Saved Vehicle Records</h2>
+
+
+<div class="filter-buttons">
+
+    <button onclick="filterData('All')">All</button>
+
+    <button onclick="filterData('2 Wheeler')">
+        2 Wheeler
+    </button>
+
+    <button onclick="filterData('4 Wheeler')">
+        4 Wheeler
+    </button>
+
+</div>
+
+<div class="table-responsive">
+<table>
+
+<thead>
+<tr>
+<th>Sl No</th>
+<th>Vehicle No</th>
+<th>Vehicle Name</th>
+<th>Type</th>
+<th>Location</th>
+</tr>
+</thead>
+
+<tbody id="tableData">
+
+</tbody>
+
+</table>
+</div>
+
+<br>
+
+<a href="index.html" class="view-btn">Back to Form</a>
+
+</div>
+
+<script>
+
+let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+
+function displayData(data){
+
+    let table = document.getElementById("tableData");
+
+    table.innerHTML = "";
+
+    data.forEach((item,index)=>{
+
+        table.innerHTML += `
+        <tr>
+            <td>${index+1}</td>
+            <td>${item.vehicleno}</td>
+            <td>${item.vehiclename}</td>
+            <td>${item.type}</td>
+            <td>${item.location}</td>
+        </tr>
+        `;
+
+    });
+
+}
+
+displayData(vehicles);
+
+function filterData(type){
+
+    if(type=="All"){
+        displayData(vehicles);
+        return;
+    }
+
+    let filtered = vehicles.filter(vehicle => vehicle.type === type);
+
+    displayData(filtered);
+
+}
+
+</script>
+</body>
+</html>
