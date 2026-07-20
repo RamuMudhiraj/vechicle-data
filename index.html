@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Entry Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+    <div class="logo">🚗 Vehicle Management</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="records.html">View Records</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Vehicle Entry Form</h2>
+
+    <form id="vehicleForm">
+
+  
+
+        <label>Vehicle No</label>
+        <input type="text" id="vehicleno" required>
+
+        <label>Vehicle Name</label>
+        <input type="text" id="vehiclename" required>
+
+        <label>Vehicle Type</label>
+
+        <div class="radio-group">
+            <input type="radio" name="type" value="2 Wheeler" required> 2 Wheeler
+            <input type="radio" name="type" value="4 Wheeler"> 4 Wheeler
+        </div>
+
+        <label>Location</label>
+        <input type="text" id="location" required>
+
+        <button type="submit">Save Data</button>
+
+    </form>
+
+    <a href="records.html" class="view-btn">View Saved Data</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
