@@ -2,112 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Saved Vehicle Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Records</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav class="navbar">
-    <div class="logo">🚗 Vehicle Management</div>
+<nav class="navbar">
 
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="logo">
+        🚗 Vehicle Data
+    </div>
+
+    <div class="menu-btn" id="menuBtn">
         ☰
     </div>
 
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="records.html">View Records</a></li>
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="records.html" class="active">
+                Records
+            </a>
+        </li>
+
     </ul>
+
 </nav>
-
-
 
 <div class="container">
 
-<h2>Saved Vehicle Records</h2>
+<div class="card">
 
+<h2>Vehicle Records</h2>
 
-<div class="filter-buttons">
+<br>
 
-    <button onclick="filterData('All')">All</button>
+<div class="filter-container">
 
-    <button onclick="filterData('2 Wheeler')">
-        2 Wheeler
-    </button>
+<input
+type="text"
+id="search"
+placeholder="Search Brand or Model...">
 
-    <button onclick="filterData('4 Wheeler')">
-        4 Wheeler
-    </button>
+<select id="vehicleFilter">
 
-</div>
+<option value="All">
+All Vehicles
+</option>
 
-<div class="table-responsive">
-<table>
+<option value="2 Wheeler">
+2 Wheeler
+</option>
 
-<thead>
-<tr>
-<th>Sl No</th>
-<th>Vehicle No</th>
-<th>Vehicle Name</th>
-<th>Type</th>
-<th>Location</th>
-</tr>
-</thead>
+<option value="4 Wheeler">
+4 Wheeler
+</option>
 
-<tbody id="tableData">
+</select>
 
-</tbody>
+<select id="brandFilter">
 
-</table>
+<option value="All">
+All Brands
+</option>
+
+</select>
+
+<select id="modelFilter">
+
+<option value="All">
+All Models
+</option>
+
+</select>
+
 </div>
 
 <br>
 
-<a href="index.html" class="view-btn">Back to Form</a>
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sl No</th>
+
+<th>Vehicle Type</th>
+
+<th>Brand</th>
+
+<th>Model</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
 
 </div>
 
-<script>
+</div>
 
-let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+</div>
 
-function displayData(data){
+<script src="data.js"></script>
 
-    let table = document.getElementById("tableData");
+<script src="records.js"></script>
 
-    table.innerHTML = "";
-
-    data.forEach((item,index)=>{
-
-        table.innerHTML += `
-        <tr>
-            <td>${index+1}</td>
-            <td>${item.vehicleno}</td>
-            <td>${item.vehiclename}</td>
-            <td>${item.type}</td>
-            <td>${item.location}</td>
-        </tr>
-        `;
-
-    });
-
-}
-
-displayData(vehicles);
-
-function filterData(type){
-
-    if(type=="All"){
-        displayData(vehicles);
-        return;
-    }
-
-    let filtered = vehicles.filter(vehicle => vehicle.type === type);
-
-    displayData(filtered);
-
-}
-
-</script>
 </body>
 </html>
