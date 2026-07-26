@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Records</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🚗 Vehicle Data
+    </div>
+
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="records.html" class="active">
+                Records
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Vehicle Records</h2>
+
+<br>
+
+<div class="filter-container">
+
+<input
+type="text"
+id="search"
+placeholder="Search Brand or Model...">
+
+<select id="vehicleFilter">
+
+<option value="All">
+All Vehicles
+</option>
+
+<option value="2 Wheeler">
+2 Wheeler
+</option>
+
+<option value="4 Wheeler">
+4 Wheeler
+</option>
+
+</select>
+
+<select id="brandFilter">
+
+<option value="All">
+All Brands
+</option>
+
+</select>
+
+<select id="modelFilter">
+
+<option value="All">
+All Models
+</option>
+
+</select>
+
+</div>
+
+<br>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Sl No</th>
+
+<th>Vehicle Type</th>
+
+<th>Brand</th>
+
+<th>Model</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="data.js"></script>
+
+<script src="records.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
