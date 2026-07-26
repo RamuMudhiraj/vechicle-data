@@ -1,307 +1,492 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+/* ===========================
+   GOOGLE FONT
+=========================== */
 
-body{
-background:#f4f4f4;
-display:flex;
-justify-content:center;
-padding:40px;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:100px auto 30px;
-    background:#fff;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
-
-input[type="text"],
-input[type="number"]{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:16px;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    font-size:16px;
-}
-
-
-.table-responsive{
-    width:100%;
-    overflow-x:auto;
-}
-
-table{
-    width:100%;
-    min-width:700px;
-    border-collapse:collapse;
-}
-
-h2{
-text-align:center;
-margin-bottom:20px;
-}
-
-label{
-display:block;
-margin-top:15px;
-font-weight:bold;
-}
-
-input[type=text],
-input[type=number]{
-width:100%;
-padding:10px;
-margin-top:5px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-.radio-group{
-margin-top:10px;
-}
-
-button{
-width:100%;
-padding:12px;
-margin-top:20px;
-background:#007bff;
-color:white;
-border:none;
-cursor:pointer;
-font-size:16px;
-border-radius:5px;
-}
-
-button:hover{
-background:#0056b3;
-}
-
-.view-btn{
-display:block;
-text-align:center;
-margin-top:20px;
-background:green;
-color:white;
-padding:12px;
-text-decoration:none;
-border-radius:5px;
-}
-
-.view-btn:hover{
-background:darkgreen;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-table th,
-table td{
-border:1px solid #ddd;
-padding:10px;
-text-align:center;
-}
-
-table th{
-background:#007bff;
-color:white;
-}
-
-tr:nth-child(even){
-background:#f2f2f2;
-}
-
-
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
-/* Navbar */
+body{
+    background:#f4f6f9;
+    min-height:100vh;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 
 .navbar{
+
     width:100%;
-    background:#007bff;
+
+    background:#0f172a;
+
     color:#fff;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:15px 40px;
-    position:fixed;
+
+    padding:16px 8%;
+
+    position:sticky;
+
     top:0;
-    left:0;
+
     z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
 }
 
 .logo{
+
     font-size:24px;
-    font-weight:bold;
+
+    font-weight:700;
+
 }
 
 .nav-links{
+
     display:flex;
+
+    gap:25px;
+
     list-style:none;
+
 }
 
-.nav-links li{
-    margin-left:25px;
-}
+.nav-links a{
 
-.nav-links li a{
-    color:white;
     text-decoration:none;
-    font-size:17px;
-    transition:0.3s;
-    padding:8px 15px;
-    border-radius:5px;
+
+    color:#fff;
+
+    font-weight:500;
+
+    transition:.3s;
+
 }
 
-.nav-links li a:hover{
-    background:white;
-    color:#007bff;
+.nav-links a:hover{
+
+    color:#22c55e;
+
 }
 
-/* Hamburger */
+.active{
 
-.menu-toggle{
+    color:#22c55e !important;
+
+}
+
+.menu-btn{
+
     display:none;
-    font-size:30px;
+
+    font-size:28px;
+
     cursor:pointer;
+
 }
 
-/* Responsive */
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px 15px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    width:100%;
+
+    max-width:700px;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    text-align:center;
+
+    margin-bottom:8px;
+
+    color:#0f172a;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.form-group input[type=text]{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.form-group input[type=text]:focus{
+
+    border-color:#22c55e;
+
+    box-shadow:0 0 5px rgba(34,197,94,.3);
+
+}
+
+/* ===========================
+   RADIO
+=========================== */
+
+.radio-group{
+
+    display:flex;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.radio{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#22c55e;
+
+    border:none;
+
+    border-radius:8px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#16a34a;
+
+}
+
+/* ===========================
+   TOAST
+=========================== */
+
+#toast{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    background:#22c55e;
+
+    color:#fff;
+
+    padding:15px 22px;
+
+    border-radius:8px;
+
+    display:none;
+
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
 
 @media(max-width:768px){
 
 .navbar{
-    padding:15px 20px;
+
+    padding:16px 20px;
+
 }
 
-.menu-toggle{
+.menu-btn{
+
     display:block;
+
 }
 
 .nav-links{
+
     position:absolute;
+
     top:70px;
+
     left:0;
+
     width:100%;
-    background:#007bff;
-    flex-direction:column;
+
+    background:#0f172a;
+
     display:none;
+
+    flex-direction:column;
+
     text-align:center;
+
+    padding:20px 0;
+
 }
 
-.nav-links.active{
+.nav-links.show{
+
     display:flex;
-}
-
-.nav-links li{
-    margin:15px 0;
-}
 
 }
 
+.card{
 
-/* Filter Buttons */
+    padding:25px;
 
-.filter-buttons{
-    display:flex;
-    justify-content:center;
+}
+
+.radio-group{
+
+    flex-direction:column;
+
     gap:15px;
-    margin:20px 0;
-    flex-wrap:wrap;
+
 }
 
-.filter-buttons button{
-    padding:10px 20px;
-    border:none;
-    background:#007bff;
-    color:white;
-    border-radius:6px;
-    cursor:pointer;
+}
+
+@media(max-width:480px){
+
+.logo{
+
+    font-size:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+button{
+
     font-size:16px;
-    transition:.3s;
+
 }
 
-.filter-buttons button:hover{
-    background:#0056b3;
 }
 
+/* ===========================
+FILTERS
+=========================== */
 
+.filter-container{
 
-@media (max-width:768px){
+display:grid;
 
-    .container{
-        width:95%;
-        padding:20px 15px;
-        margin-top:90px;
-    }
+grid-template-columns:repeat(4,1fr);
 
-    h2{
-        font-size:22px;
-        text-align:center;
-    }
+gap:15px;
 
-    label{
-        font-size:15px;
-    }
+}
 
-    input[type="text"],
-    input[type="number"]{
-        font-size:15px;
-        padding:10px;
-    }
+.filter-container input,
+.filter-container select{
 
-    .radio-group{
-        display:flex;
-        gap:20px;
-        flex-wrap:wrap;
-        margin-top:10px;
-    }
+padding:12px;
 
-    button{
-        width:100%;
-        font-size:16px;
-    }
+border:1px solid #ccc;
 
-    .filter-buttons{
-        flex-direction:column;
-        gap:10px;
-    }
+border-radius:8px;
 
-    .filter-buttons button{
-        width:100%;
-    }
+font-size:15px;
 
-    table{
-        font-size:14px;
-    }
+outline:none;
 
-    th,
-    td{
-        padding:8px;
-        white-space:nowrap;
-    }
+}
+
+.table-container{
+
+overflow-x:auto;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+th{
+
+background:#22c55e;
+
+color:white;
+
+padding:15px;
+
+}
+
+td{
+
+padding:14px;
+
+border-bottom:1px solid #ddd;
+
+text-align:center;
+
+}
+
+tr:hover{
+
+background:#f5f5f5;
+
+}
+
+.edit-btn{
+
+background:#2563eb;
+
+padding:8px 15px;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+cursor:pointer;
+
+margin-right:8px;
+
+}
+
+.delete-btn{
+
+background:#ef4444;
+
+padding:8px 15px;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+.filter-container{
+
+grid-template-columns:1fr;
+
+}
 
 }
