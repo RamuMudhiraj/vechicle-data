@@ -2,57 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vehicle Entry Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Data Collection</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- ================= NAVBAR ================= -->
 
     <nav class="navbar">
-    <div class="logo">🚗 Vehicle Management</div>
 
-    <div class="menu-toggle" id="menu-toggle">
-        ☰
-    </div>
-
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="records.html">View Records</a></li>
-    </ul>
-</nav>
-
-<div class="container">
-    <h2>Vehicle Entry Form</h2>
-
-    <form id="vehicleForm">
-
-  
-
-        <label>Vehicle No</label>
-        <input type="text" id="vehicleno" required>
-
-        <label>Vehicle Name</label>
-        <input type="text" id="vehiclename" required>
-
-        <label>Vehicle Type</label>
-
-        <div class="radio-group">
-            <input type="radio" name="type" value="2 Wheeler" required> 2 Wheeler
-            <input type="radio" name="type" value="4 Wheeler"> 4 Wheeler
+        <div class="logo">
+            🚗 Vehicle Data
         </div>
 
-        <label>Location</label>
-        <input type="text" id="location" required>
+        <div class="menu-btn" id="menuBtn">
+            ☰
+        </div>
 
-        <button type="submit">Save Data</button>
+        <ul class="nav-links" id="navLinks">
 
-    </form>
+            <li>
+                <a href="index.html" class="active">
+                    Home
+                </a>
+            </li>
 
-    <a href="records.html" class="view-btn">View Saved Data</a>
+            <li>
+                <a href="records.html">
+                    Records
+                </a>
+            </li>
 
-</div>
+        </ul>
 
-<script src="script.js"></script>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <div class="card">
+
+            <h2>
+                Vehicle Data Collection
+            </h2>
+
+            <p class="subtitle">
+                Enter vehicle details below.
+            </p>
+
+            <!-- Vehicle Type -->
+
+            <div class="form-group">
+
+                <label>
+                    Vehicle Type
+                </label>
+
+                <div class="radio-group">
+
+                    <label class="radio">
+
+                        <input
+                            type="radio"
+                            name="vehicleType"
+                            value="2 Wheeler">
+
+                        2 Wheeler
+
+                    </label>
+
+                    <label class="radio">
+
+                        <input
+                            type="radio"
+                            name="vehicleType"
+                            value="4 Wheeler">
+
+                        4 Wheeler
+
+                    </label>
+
+                </div>
+
+            </div>
+            
+
+            <!-- Brand -->
+
+            <div class="form-group">
+
+                <label>
+                    Brand
+                </label>
+
+                <input
+
+                    type="text"
+
+                    id="brand"
+
+                    placeholder="Start typing brand..."
+
+                    autocomplete="off"
+
+                    list="brandSuggestions"
+
+                >
+
+                <datalist id="brandSuggestions">
+
+                </datalist>
+
+            </div>
+
+            <!-- Model -->
+
+            <div class="form-group">
+
+                <label>
+                    Model
+                </label>
+
+                <input
+
+                    type="text"
+
+                    id="model"
+
+                    placeholder="Start typing model..."
+
+                    autocomplete="off"
+
+                    list="modelSuggestions"
+
+                >
+
+                <datalist id="modelSuggestions">
+
+                </datalist>
+
+            </div>
+
+            <!-- Save Button -->
+
+            <button id="saveBtn">
+
+                Save Data
+
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Toast -->
+
+    <div id="toast"></div>
+
+    <script src="data.js"></script>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
